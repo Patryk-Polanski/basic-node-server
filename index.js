@@ -26,6 +26,7 @@ server.on("request", (req, res) => {
       const friend = data.toString();
       friends.push(JSON.parse(friend));
     });
+    req.pipe(res);
   } else if (req.method === "GET" && items[1] === "friends") {
     res.writeHead(200, {
       // "Content-Type": "text/plain",
